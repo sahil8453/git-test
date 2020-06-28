@@ -1,7 +1,9 @@
+// only public instances can be initialized through object initializers.
+
 using System;
 class abcd
 {
-	int a;
+	public int a;
 	public abcd():this(10)
 	{
 		a= 10;
@@ -19,20 +21,15 @@ class abcd
 	{
 		Console.WriteLine("display2 method:");
 	}
+	public void dis()
+	{
+		Console.WriteLine("A:"+a);
+	}
 }
 class first
 {
 	static void Main(string[] argc)
 	{
-		var x = "MS";
-		float y = 20.223f;
-		int i = 10;
-		Console.WriteLine("x:"+x+"\ty:"+y);
-		Console.WriteLine("{0,5} Jaatre {1:#.##}",x,y);
-		Console.WriteLine("Multiply:"+(i<<3));
-		abcd a = new abcd();
-		a.display(10);
-		int b = 20;
-		a.display(ref b);
+		new abcd(){a = 55}.dis();
 	}
 }
